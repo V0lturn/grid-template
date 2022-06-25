@@ -50,6 +50,9 @@
     background-color: rgba($color-light, 0.15);
   }
 
+  &__el button{
+    transition: 0.5s;
+  }
   &__el button:focus,
   &__el button:hover{
     border: 2px solid $color-light;

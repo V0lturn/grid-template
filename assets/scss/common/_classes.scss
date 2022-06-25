@@ -1,6 +1,33 @@
 @use "../presets" as *;
 @use "../mixins" as *;
 
+.posts h2,
+.about h2{
+  margin-top: 0;
+  letter-spacing: 0.1em;
+  line-height: 1.2em;
+  color: $color-primary;
+  font-family: $font-header;
+
+  @include lg-min{
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+  @include lg-md{
+    margin-bottom: 2.625rem;
+    font-size: 2em;
+  }
+  @include md-sm{
+    margin-bottom: 2.25rem;
+    font-size: 1.5rem;
+  }
+  @include sm{
+    margin-bottom: 2.25rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
 .btn{
   display: flex;
   align-items: center;
@@ -10,12 +37,17 @@
 
   transition: background-color 0.5s;
 
+}
+
+.btn,
+.skills__actions .btn--primary,
+.posts .btn--primary,
+.form__el .btn--primary{
   &:hover,
   &:focus{
     background-color: $color-accent;
   }
 }
-
 .btn--light{
   @include lg-min{
     min-width: 250px;
@@ -35,7 +67,8 @@
 
 }
 
-.skills__actions .btn--primary{
+.skills__actions .btn--primary,
+.posts__actions .btn--primary{
   font-size: 1.125rem;
   height: 60px;
 
@@ -47,5 +80,4 @@
   }
   background-color: rgba($color-primary, 0.8);
   border: 2px solid $color-primary;
-
 }

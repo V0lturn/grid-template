@@ -1,2 +1,129 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
+
+.posts{
+  @include lg-min{
+    padding-top: $gap-x5;
+    padding-bottom: $gap-x5;
+  }
+  @include lg-md{
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
+  }
+  @include md{
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
+
+  &__container{
+    @extend %container;
+  }
+
+  &__struct{
+    display: grid;
+    padding-bottom: $gap;
+    gap: $gap;
+
+    @include lg-min{
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+    }
+    @include lg-md{
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+    }
+    @include md-sm{
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+    }
+    @include sm{
+      grid-template-columns: 1fr;
+      grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+    }
+  }
+
+  &__el {
+    background-color: rgb(242, 242, 242);
+    transition: background-color 0.5s;
+
+    &-link {
+      display: grid;
+      grid-template-rows: 300px 1fr;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    &-img {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: $color-primary;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+    }
+
+    &-info {
+      display: grid;
+      align-content: center;
+      padding: $gap;
+
+      h3 {
+        font-family: $font-header;
+        letter-spacing: 0.05em;
+        color: $color-gray;
+        font-size: 1.125rem;
+        transition: color 0.5s;
+        text-align: center;
+      }
+
+      p{
+        color: $color-gray;
+        transition: color 0.5s;
+        text-align: center;
+      }
+    }
+  }
+
+  &__actions{
+    @include sm-min{
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.posts__el:nth-of-type(1){
+  grid-area: p1;
+}
+
+.posts__el:nth-of-type(2){
+  grid-area: p2;
+}
+
+.posts__el:nth-of-type(3){
+  grid-area: p3;
+}
+
+.posts__el:nth-of-type(4){
+  grid-area: p4;
+}
+
+.posts__el:nth-of-type(5){
+  grid-area: p5;
+}
+
+.posts__el:nth-of-type(6){
+  grid-area: p6;
+}
+
+.posts__el:hover{
+  background-color: $color-gray-light;
+  .posts__el-img img{
+    transform: scale(1.1);
+  }
+}
