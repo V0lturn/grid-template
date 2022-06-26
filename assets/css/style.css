@@ -749,6 +749,21 @@ a {
   background-color: rgba(255, 255, 255, 0.05);
   font-size: 1.125rem;
 }
+.form__el input::-webkit-input-placeholder {
+  color: #637588;
+}
+.form__el input::-moz-placeholder {
+  color: #637588;
+}
+.form__el input:-ms-input-placeholder {
+  color: #637588;
+}
+.form__el input::-ms-input-placeholder {
+  color: #637588;
+}
+.form__el input::placeholder {
+  color: #637588;
+}
 .form__el input:focus, .form__el input:hover {
   border-color: rgba(255, 255, 255, 0.1);
   border-bottom-color: #ffffff;

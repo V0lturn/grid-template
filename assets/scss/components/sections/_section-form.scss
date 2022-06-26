@@ -57,6 +57,10 @@
     font-size: 1.125rem;
   }
 
+  &__el input::placeholder {
+    color: $color-gray;
+  }
+
   &__el input:focus,
   &__el input:hover {
     border-color: rgba($color-light, 0.1);
@@ -72,4 +76,3 @@
     border: 2px solid $color-light;
   }
 }
-
