@@ -1,56 +1,69 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
-.footer{
+.footer {
   padding: 50px 20px 70px;
+
   text-align: center;
+
   background-color: $color-primary;
 
-  &__container{
+  &__container {
     @extend %container;
   }
 
-  &__icons{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-    justify-content: center;
-    margin-bottom: 40px;
+  &__icons {
     position: relative;
 
-    a{
+    display: grid;
+    justify-content: center;
+
+    margin-bottom: 40px;
+
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+
+    a {
       padding: 10px;
+
       transition: color 0.5s;
 
-      i{
+      i {
         font-size: 36px;
       }
     }
   }
 
   &__icons::after {
-    content: "";
     position: absolute;
     bottom: -20px;
     left: calc(50% - 37.5px);
+
     width: 75px;
     height: 2px;
+
+    content: "";
+
     background-color: rgba($color-light, 0.1);
   }
 
   &__icons a:hover,
-  &__icons a:focus{
+  &__icons a:focus {
     color: $color-accent;
   }
 
-  &__text span:nth-of-type(1){
+  &__text span:nth-of-type(1) {
     margin-right: -0.5em;
+
     letter-spacing: 0.33em;
+
     font-weight: 100;
   }
 
-  &__text span:nth-of-type(2){
+  &__text span:nth-of-type(2) {
     letter-spacing: 0.05em;
-    font-weight: 700;
+
     color: $color-gray-light;
+
+    font-weight: 700;
   }
 }

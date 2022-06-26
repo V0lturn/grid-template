@@ -2,82 +2,93 @@
 @use "../mixins" as *;
 
 .posts h2,
-.about h2{
+.about h2 {
   margin-top: 0;
-  letter-spacing: 0.1em;
-  line-height: 1.2em;
-  color: $color-primary;
-  font-family: $font-header;
 
-  @include lg-min{
+  letter-spacing: 0.1em;
+
+  color: $color-primary;
+
+  font-family: $font-header;
+  line-height: 1.2em;
+
+  @include lg-min {
     margin-bottom: 3rem;
+
     font-size: 2.5rem;
   }
-  @include lg-md{
+  @include lg-md {
     margin-bottom: 2.625rem;
+
     font-size: 2em;
   }
-  @include md-sm{
+  @include md-sm {
     margin-bottom: 2.25rem;
+
     font-size: 1.5rem;
   }
-  @include sm{
+  @include sm {
     margin-bottom: 2.25rem;
+
     text-align: center;
+
     font-size: 1.5rem;
   }
 }
 
-.btn{
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 0.5em 1em;
-  letter-spacing: 0.1em;
 
   transition: background-color 0.5s;
-
+  letter-spacing: 0.1em;
 }
 
 .btn,
 .skills__actions .btn--primary,
 .posts .btn--primary,
-.form__el .btn--primary{
+.form__el .btn--primary {
   &:hover,
-  &:focus{
+  &:focus {
     background-color: $color-accent;
   }
 }
-.btn--light{
-  @include lg-min{
+.btn--light {
+  border: 2px solid $color-light;
+  background-color: rgba($color-light, 0.1);
+
+  @include lg-min {
     min-width: 250px;
     height: 60px;
+
     font-size: 1.125rem;
   }
-  @include lg-md{
+  @include lg-md {
     min-width: 200px;
     height: 50px;
   }
-  @include md{
+  @include md {
     min-width: 170px;
     height: 40px;
   }
-  background-color: rgba($color-light, 0.1);
-  border: 2px solid $color-light;
-
 }
 
 .skills__actions .btn--primary,
-.posts__actions .btn--primary{
-  font-size: 1.125rem;
+.posts__actions .btn--primary {
   height: 60px;
 
-  @include sm-min{
+  border: 2px solid $color-primary;
+  background-color: rgba($color-primary, 0.8);
+
+  font-size: 1.125rem;
+
+  @include sm-min {
     min-width: 350px;
   }
-  @include sm{
+  @include sm {
     width: 100%;
   }
-  background-color: rgba($color-primary, 0.8);
-  border: 2px solid $color-primary;
 }
